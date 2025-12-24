@@ -1,8 +1,22 @@
 
-/// <reference types="@react-three/fiber" />
+/// <reference types="react" />
 import React from 'react';
 import { ThreeElements } from '@react-three/fiber';
 import { ContactShadows, Environment as DreiEnvironment, Stars, Sparkles } from '@react-three/drei';
+
+// Augment the JSX namespace to include Three.js elements provided by @react-three/fiber
+// This resolves "Property '...' does not exist on type 'JSX.IntrinsicElements'"
+// Using both global JSX and React.JSX namespaces for broader compatibility across TS/React versions
+declare global {
+  namespace JSX {
+    interface IntrinsicElements extends ThreeElements {}
+  }
+  namespace React {
+    namespace JSX {
+      interface IntrinsicElements extends ThreeElements {}
+    }
+  }
+}
 
 export const Environment: React.FC = () => {
   return (

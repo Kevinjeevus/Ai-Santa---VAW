@@ -1,10 +1,24 @@
 
-/// <reference types="@react-three/fiber" />
+/// <reference types="react" />
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { useFrame, ThreeElements } from '@react-three/fiber';
 import { Group, Mesh, Color, MathUtils } from 'three';
 import { Sphere, Cylinder, Torus, Cone, Circle, Box, RoundedBox, Ring } from '@react-three/drei';
 import { MouthCue } from '../hooks/useGeminiLive';
+
+// Augment the JSX namespace to include Three.js elements provided by @react-three/fiber
+// This resolves "Property '...' does not exist on type 'JSX.IntrinsicElements'"
+// Using both global JSX and React.JSX namespaces for broader compatibility across TS/React versions
+declare global {
+  namespace JSX {
+    interface IntrinsicElements extends ThreeElements {}
+  }
+  namespace React {
+    namespace JSX {
+      interface IntrinsicElements extends ThreeElements {}
+    }
+  }
+}
 
 interface AvatarProps {
   mouthCue: MouthCue;
