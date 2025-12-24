@@ -1,0 +1,7 @@
+{
+  "name": "Live 3D Santa",
+  "description": "A real-time interactive 3D Santa Claus powered by VAW Tech",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
