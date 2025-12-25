@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# 🎅 Live 3D Santa Platform
 
-This contains everything you need to run your app locally.
+An interactive, AI-powered 3D Santa experience with community wish-tracking features.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1l9q_XDb9znoD1QA65zADOkjRVzfGlHIk
+## 🚀 Quick Start
 
-## Run Locally
+### Local Development
+1. Clone the repository.
+2. Run `npm install`.
+3. Create a `.env` file in the root and add your Gemini API Key:
+   ```
+   API_KEY=your_gemini_api_key_here
+   ```
+4. Run `npm run dev`.
 
-**Prerequisites:**  Node.js
+## 🌐 Deployment
 
+### Deploy to Netlify (Recommended)
+1. **Push your code** to a GitHub repository.
+2. **Login to Netlify** and click "Add new site" > "Import an existing project".
+3. Select your GitHub repository.
+4. **Site Settings**:
+   - Build Command: `npm run build`
+   - Publish directory: `dist`
+5. **Environment Variables**:
+   - Go to Site Configuration > Environment Variables.
+   - Add a variable named `API_KEY` with your Gemini API Key.
+6. Click **Deploy**.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Deploy to GitHub Pages
+1. Install the gh-pages package: `npm install gh-pages --save-dev`.
+2. Add a `homepage` field to your `package.json` pointing to your site URL.
+3. Add `"predeploy": "npm run build", "deploy": "gh-pages -d dist"` to your scripts.
+4. Run `npm run deploy`.
+*Note: Since GitHub Pages is fully static, ensure your API Key is handled securely via build-time secrets in GitHub Actions.*
+
+## 🛠 Tech Stack
+- **AI**: Google Gemini API (2.5 Flash Native Audio)
+- **3D Engine**: Three.js + React Three Fiber
+- **Styling**: Tailwind CSS
+- **Framework**: React 19 + Vite

@@ -130,10 +130,10 @@ export const useGeminiLive = (): UseGeminiLiveReturn => {
         model: MODEL_NAME,
         config: {
           responseModalities: [Modality.AUDIO],
-          speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Charon' } } },
+          speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Puck' } } },
           inputAudioTranscription: {},
           outputAudioTranscription: {},
-          systemInstruction: "You are Santa Claus. You are jolly, kind, and magical. You are talking to a human face-to-face. Speak with warmth, use 'Ho ho ho!' naturally. Acknowledge any Christmas wishes they send. Keep answers conversational and relatively short.",
+          systemInstruction: "You are a friendly, curious, and energetic 8-year-old child. You are talking to the user face-to-face. You love toys, games, and learning new things. Speak with childlike wonder and use simple, playful language. Keep your answers relatively short and engaging.",
         },
         callbacks: {
           onopen: () => {
